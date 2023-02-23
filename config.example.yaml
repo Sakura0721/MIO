@@ -1,0 +1,37 @@
+# https://core.telegram.org/api/obtaining_api_id#:~:text=Obtaining%20api_id&text=Sign%20up%20for%20Telegram%20using,parameters%20required%20for%20user%20authorization.
+# 获取你自己的 api_id api_hash 写道下方
+# 注意这两个字段等同于你的telegram账号，不要泄露给任何人
+api_id: 12345678
+api_hash: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+# 你的telegram手机号，注意需要有国家号码
+phone: "+8613000000000"
+
+# 送心给指定的用户
+give_hearts:
+  enabled: false
+  # 用户名列表，有多个搜索结果时仅取第一个
+  usernames:
+    - "Sakura0721"
+
+# 自动给当天送过心的用户回赠
+reply_hearts:
+  enabled: false
+
+# 给指定用户增加时间
+add_time:
+  enabled: false
+  # 用户名列表，有多个搜索结果时仅取第一个
+  usernames:
+    - "Sakura0721"
+
+# 自动给八小时内为你增加过时间的用户增加时间
+reply_add_time:
+  enabled: false
+
+# 为公开列表中前五十个用户增加时间
+add_time_all:
+  enabled: false
+  # 被排除的用户不会被增加时间
+  exclude_usernames:
+    - ""
+
