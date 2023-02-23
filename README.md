@@ -13,7 +13,9 @@ mioGameBot的自动化脚本。
 
 ## How to use
 
-需要golang环境，开发所使用的go版本为`1.20`
+- 需要golang环境，开发所使用的go版本为`1.20`
+- 需要安装版本大于等于1.8.11的TDLib
+
 
 ```bash
 git clone https://github.com/Sakura0721/MIO.git
