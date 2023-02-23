@@ -32,6 +32,6 @@ go run main.go
 第一次运行之后可设置crontab，每小时执行一次：
 ```
 crontab -e
-# 0 * * * * go run main.go >> log.txt
+# 0 * * * * cd /path/to/MIO && go run main.go >> log.txt
 ```
 
