@@ -19,6 +19,7 @@ type Config struct {
 	AddTime      AddTimeConfig      `yaml:"add_time"`
 	AddTimeAll   AddTimeAllConfig   `yaml:"add_time_all"`
 	ReplyAddTime ReplyAddTimeConfig `yaml:"reply_add_time"`
+	Explore      ExploreConfig      `yaml:"explore"`
 }
 
 type GiveHeartsConfig struct {
@@ -42,6 +43,10 @@ type AddTimeConfig struct {
 }
 
 type ReplyAddTimeConfig struct {
+	Enabled bool `yaml:"enabled"`
+}
+
+type ExploreConfig struct {
 	Enabled bool `yaml:"enabled"`
 }
 

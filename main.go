@@ -235,6 +235,17 @@ func replyHearts() {
 	return
 }
 
+func explore() {
+	fmt.Println("正在探险")
+	res := string(postData("TanXian/TanXian", []byte("{\"weizhi\":0}")))
+	fmt.Println(res)
+	for strings.Contains(res, ":1分钟") || strings.Contains(res, ":0分钟") {
+		time.Sleep(time.Minute)
+		res = string(postData("TanXian/TanXian", []byte("{\"weizhi\":0}")))
+		fmt.Println(res)
+	}
+}
+
 func main() {
 	apiID := config.C.ApiId
 	apiHash := config.C.ApiHash
@@ -270,7 +281,7 @@ func main() {
 		check(err)
 		api := client.API()
 
-	fmt.Println("正在获取用户信息")
+		fmt.Println("正在获取用户信息")
 
 		currentUser, err := api.ContactsResolvePhone(ctx, config.C.Phone)
 		check(err)
@@ -358,6 +369,7 @@ func main() {
 
 		hash, err := getHash(upd.URL)
 		check(err)
+		fmt.Println(upd.URL)
 
 		login(queryID, authDate, hash)
 
@@ -380,6 +392,11 @@ func main() {
 		if config.C.ReplyAddTime.Enabled {
 			replyAddTime()
 		}
+
+		if config.C.Explore.Enabled {
+			explore()
+		}
+
 		// for {
 		// 	fmt.Println(api.MessagesProlongWebView(ctx, &tg.MessagesProlongWebViewRequest{
 		// 		Flags:        0,
